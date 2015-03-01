@@ -1,0 +1,21 @@
+<h1 id="notice"><%= notice %></h1>
+
+<p>
+  <h1>
+    Name:
+    <small><%= @link.name %></small>
+  </h1>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <a href=<%= @link.url %> target="_blank"><%= @link.url %></a>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @link.description %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>
