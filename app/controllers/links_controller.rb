@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
   def index
-    @links = Link.all
+    @links = Link.where('folder_id is NULL')
   end
 
   def show
