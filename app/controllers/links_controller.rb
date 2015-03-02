@@ -19,7 +19,7 @@ class LinksController < ApplicationController
   def create
     if params[:folder_id]
       @folder = Folder.find(params[:folder_id])
-      @link = @folder.link.create(link_params)
+      @link = @folder.links.create(link_params)
       redirect_to folder_path(@folder)
     else
       @link = Link.new(link_params)
