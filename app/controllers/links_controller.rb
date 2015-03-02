@@ -17,11 +17,17 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.new(link_params)
-    if @link.save
-      redirect_to @link
+    if params[:folder_id]
+      @folder = Folder.find(params[:folder_id])
+      @link = @folder.link.create(link_params)
+      redirect_to folder_path(@folder)
     else
-      render 'new'
+      @link = Link.new(link_params)
+      if @link.save
+        redirect_to @link
+      else
+        render 'new'
+      end
     end
   end
 
