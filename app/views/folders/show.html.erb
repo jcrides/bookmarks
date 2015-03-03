@@ -12,7 +12,12 @@
   <%= @folder.description %>
 </p>
 
-<h1><small>Add a new link</small></h1>
+<h3>Link List</h3>
+<%= render 'links/linktable' %>
+
+<br>
+
+<h3><small>Add a new link</small></h3>
 <%= render 'links/flform' %>
 
 <%= link_to 'Edit', edit_folder_path(@folder) %> |
