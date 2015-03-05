@@ -10,7 +10,7 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-    @folders = Folder.all
+    @folders = Folder.all.sort_by {|folder| folder.name}
   end
 
   def edit
