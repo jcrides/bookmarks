@@ -10,6 +10,7 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
+    @folders = Folder.all
   end
 
   def edit
