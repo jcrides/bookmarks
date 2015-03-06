@@ -25,9 +25,8 @@
   </div>
 
   <div class="field">
-    <%= f.label 'Folder' %>
-    <% options = options_from_collection_for_select(@folders, 'id', 'name', @link.folder_id.to_i) %>
-    <%= select_tag(:folder_id, options) %>
+    <%= f.label :folder_id %>
+    <%= f.collection_select(:folder_id, Folder.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>
