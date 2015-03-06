@@ -10,11 +10,12 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-    @folders = Folder.all.sort_by {|folder| folder.name}
+    @folders = Folder.all.sort_by { |folder| folder.name }
   end
 
   def edit
     @link = Link.find(params[:id])
+    @folders = Folder.all.sort_by { |folder| folder.name }
   end
 
   def create
