@@ -24,9 +24,9 @@
     <%= f.text_field :description %>
   </div>
 
-  <% options = options_from_collection_for_select(@folders, 'id', 'name') if @folders %>
   <div class="field">
     <%= f.label 'Folder' %>
+    <% options = options_from_collection_for_select(@folders, 'id', 'name', @link.folder_id.to_i) %>
     <%= select_tag(:folder_id, options) %>
   </div>
   <div class="actions">
