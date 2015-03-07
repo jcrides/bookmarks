@@ -1,7 +1,7 @@
 class FoldersController < ApplicationController
 
   def index
-    @folders = Folder.all
+    @folders = Folder.all.sort_by { |folder| folder.name }
   end
 
   def show
