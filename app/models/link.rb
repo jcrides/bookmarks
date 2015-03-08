@@ -4,4 +4,16 @@ class Link < ActiveRecord::Base
 
   belongs_to :folder
 
+  def self.split_url(url)
+    if url.index('/', 8)
+      site = url[0..(url.index('/', 8) - 1)]
+      path = url[url.index('/', 8)..-1]
+    else
+      site = url
+      path = '/'
+    end
+
+    return site, path
+  end
+
 end
