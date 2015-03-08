@@ -6,7 +6,7 @@ class FoldersController < ApplicationController
 
   def show
     @folder = Folder.find(params[:id])
-    @links = Link.where("folder_id = #{params[:id]}")
+    @links = Link.where("folder_id = #{params[:id]}").sort_by { |link| link.name }
   end
 
   def new

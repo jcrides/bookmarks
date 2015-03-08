@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
   def index
-    @links = Link.where('folder_id is NULL')
+    @links = Link.where('folder_id is NULL').sort_by { |link| link.name }
   end
 
   def show
