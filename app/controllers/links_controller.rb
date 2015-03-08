@@ -19,7 +19,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    params[:site], params[:path] = Link.split_url(params[:link][:url])
+    params[:link][:site], params[:link][:path] = Link.split_url(params[:link][:url])
     if params[:folder_id]
       @folder = Folder.find(params[:folder_id])
       @link = @folder.links.create(link_params)
@@ -36,7 +36,7 @@ class LinksController < ApplicationController
 
   def update
     @link = Link.find(params[:id])
-    params[:site], params[:path] = Link.split_url(params[:link][:url])
+    params[:link][:site], params[:link][:path] = Link.split_url(params[:link][:url])
     if @link.update(link_params)
       redirect_to @link
     else
