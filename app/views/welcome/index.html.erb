@@ -2,6 +2,9 @@
   <h1>Welcome to bookmarks</h1>
   <h4>Where your marks are booked</h4>
 </center>
+<% if ENV['RAILS_ENV'] == 'development' %>
+  <h2 style="color: red">DEVELOPMENT</h2>
+<% end %>
 
 <h2>Folders</h2>
 <%= render 'folders/foldertable' %>
