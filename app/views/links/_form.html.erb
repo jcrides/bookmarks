@@ -1,4 +1,4 @@
-<%= form_for(@link) do |f| %>
+<%= bootstrap_form_for(@link) do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
@@ -12,20 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :url %>
     <%= f.text_field :url %>
   </div>
   <div class="field">
-    <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
-
   <div class="field">
-    <%= f.label :folder_id %>
     <%= f.collection_select(:folder_id, Folder.all, :id, :name, {:include_blank => "Choose folder"}) %>
   </div>
   <div class="actions">

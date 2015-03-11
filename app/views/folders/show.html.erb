@@ -17,8 +17,12 @@
 
 <br>
 
-<h3><small>Add a new link</small></h3>
-<%= render 'links/flform' %>
+<div class="panel panel-default" id="link-edit-panel">
+  <div class="panel-body">
+    <h3><small>Add a new link</small></h3>
+    <%= render 'links/flform' %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_folder_path(@folder) %> |
 <%= link_to 'Back', folders_path %>
