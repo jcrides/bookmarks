@@ -14,10 +14,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Twitter's bootstrap
-gem 'bootstrap-sass'
+# Stuff I added
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
